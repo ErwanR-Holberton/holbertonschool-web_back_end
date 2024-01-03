@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """wait some time"""
 import random
-import time
+import asyncio
 
 
-def wait_random(max):
+async def wait_random(max_delay: int = 10) -> float:
     """sleep between 0 and max"""
-    time.sleep(random.random() * max)
+    delay = random.uniform(0, max_delay)
+    await asyncio.sleep(delay)
+    return delay
