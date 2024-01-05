@@ -7,7 +7,9 @@ from typing import AsyncGenerator
 
 async def async_generator() -> AsyncGenerator[float, None]:
     """
-    generate 10 numbers
+    this function
+    generates 10 numbers
+    and return a list
     """
     for i in range(10):
         await asyncio.sleep(1)
