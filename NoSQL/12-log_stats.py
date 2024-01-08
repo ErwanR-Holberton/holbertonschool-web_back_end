@@ -13,7 +13,7 @@ if __name__ == "__main__":
     print("Methods:")
     method = ["GET", "POST", "PUT", "PATCH", "DELETE"]
     for met in method:
-        print("\tmethod", met, collection.count_documents({"method": met}))
+        print("\tmethod", met + ":", collection.count_documents({"method": met}))
     print(collection.count_documents({"method": "GET", "path": "/status"}),
           "status check")
 
