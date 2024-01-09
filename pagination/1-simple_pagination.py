@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""search file for pages of data"""
 import csv
 import math
 from typing import List
