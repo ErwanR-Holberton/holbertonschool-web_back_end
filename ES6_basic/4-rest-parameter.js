@@ -1,7 +1,7 @@
 export default function returnHowManyArguments(...theArgs) {
   let total = 0;
-  for (const arg of theArgs) {
+  theArgs.forEach(() => {
     total += 1;
-  }
+  });
   return total;
 }
