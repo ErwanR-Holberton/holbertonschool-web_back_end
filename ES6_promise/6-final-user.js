@@ -14,7 +14,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     if (prom.status === 'rejected') {
       promResult = {
         status: prom.status,
-        value: prom.reason,
+        value: prom.reason.message,
       };
     }
 
