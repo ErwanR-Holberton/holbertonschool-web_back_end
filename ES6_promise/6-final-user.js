@@ -6,17 +6,20 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     uploadPhoto(fileName)]);
   const arrayResult = [];
   for (const prom of promises) {
-    const promResult = {
+    let promResult = {
       status: prom.status,
       value: prom.status === 'fulfilled' && prom.value,
     };
 
     if (prom.status === 'rejected') {
-      promResult.value = prom.reason.message;
+      promResult = {
+        status: prom.status,
+        value: prom.reason,
+      };
     }
 
     arrayResult.push(promResult);
   }
-  console.log(arrayResult)
+  console.log(arrayResult);
   return arrayResult;
 }
