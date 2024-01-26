@@ -11,7 +11,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       value: result.status === 'fulfilled' ? result.value : { error: result.reason },
     })))
     .catch((error) => {
-      console.error('Error during profile signup:', error.message);
+      console.log('Error during profile signup:', error.message);
       return [
         {
           status: 'rejected',
