@@ -5,9 +5,13 @@ export default function handleProfileSignup() {
 
   return Promise.all(promises)
     .then((results) => {
-      console.log(`${results[0].body} ${results[1].firstName} ${results[1].lastName}`);
+      if (results[0].status === 200) {
+        console.log(`${results[0].body} ${results[1].firstName} ${results[1].lastName}`);
+      } else {
+        console.error('Signup system offline');
+      }
     })
-    .catch(() => {
-      console.error('Signup system offline');
+    .catch((error) => {
+      console.error(error);
     });
 }
