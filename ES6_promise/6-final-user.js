@@ -14,12 +14,11 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     if (prom.status === 'rejected') {
       promResult = {
         status: prom.status,
-        value: prom.reason.message,
+        value: `Error: ${prom.reason.message}`,
       };
     }
 
     arrayResult.push(promResult);
   }
-  console.log(arrayResult);
   return arrayResult;
 }
